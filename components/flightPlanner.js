@@ -166,7 +166,7 @@ export default function Home() {
                     <div className='col-7 px-5 h-100 overflow-scroll'>
                         <h1>Results</h1>
                         <div style={{display: "none"}} className="alert alert-danger" id="errormessage">No Flights Available!</div>
-                        {flightData.map((d) => (<ResultSummary dest={d.flyToCity} outgoing={d.dateOut} back={d.dateBack} price={d.price} airline={d.airline}/>))}
+                        {flightData.map((d) => (<ResultSummary key={d.bookingLink} dest={d.flyToCity} outgoing={d.dateOut} back={d.dateBack} price={d.price} airline={d.airline}/>))}
                         <div id="loading" className={styles.loading}></div>
                           
                     </div>
