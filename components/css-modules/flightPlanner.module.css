@@ -1,0 +1,26 @@
+
+.loading {
+    position: absolute;
+    top: 33%;
+    bottom: auto;
+    left: 66%;
+
+    width: 10rem;
+    height: 10rem;
+    border: 10px solid var(--sky-blue);
+    border-top: 20px solid grey;
+    border-radius: 100%;
+    margin: auto;
+    animation: spin 2s infinite linear;
+    visibility: hidden;
+}
+
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

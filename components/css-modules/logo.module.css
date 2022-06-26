@@ -1,0 +1,33 @@
+.background {
+    
+    position: absolute;
+    
+    width: 50vw;
+    height: 100vh;
+    z-index: -999;
+    overflow: hidden;
+
+}
+
+.background::before {
+    content: '';
+    top: -10%;
+    left:-75%;
+    background: var(--sky-blue);
+    border-radius: 100%;
+    position: absolute;
+    display: block;
+    width: 150%;
+    height: 150%;
+}
+
+
+
+.logo {
+    position: absolute;
+    width: 20%;
+    z-index: -998;
+    top: 3%;
+    left: 3%;
+
+}
