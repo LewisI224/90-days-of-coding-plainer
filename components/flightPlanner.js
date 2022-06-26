@@ -12,7 +12,7 @@ export default function Home() {
         const loadingWheel = document.getElementById("loading");
         const searchForm = document.getElementsByTagName("fieldset");
         disableFormInput(loadingWheel, searchForm);
-        document.getElementById("errormessage").style = {display: "block"}
+        document.getElementById("errormessage").visibility = 'hidden';
         
        
         const res = await fetch('/api/getFlights', {
@@ -35,10 +35,11 @@ export default function Home() {
         if (result.error) {
             throwError(result.error);
         } else {
-            enableFormInput(loadingWheel, searchForm);
+            
             if (result.data[0]) {
                 // call function to format the data
                setFlightData(await formatData(result.data));
+               enableFormInput(loadingWheel, searchForm);
                
             }
             else {
@@ -105,7 +106,7 @@ export default function Home() {
     /* If no flight is returned display an error message */
     function noFlight() {
         setFlightData([{flyFromAirport: '', flyToAirport: '', flyFromCity: '', flyToCity: '', dateOut: '', dateBack: '', price: '', airline: '', bookingLink: ''}])
-        document.getElementById("errormessage").style = {display: ""}
+        document.getElementById("errormessage").visibility = 'visible';
     }
 
     /* current month incremented by 2 as javascript date counts month from 0
@@ -150,7 +151,7 @@ export default function Home() {
                                 <select className="form-control" name="class" id="class">
                                     <option value="M">Economy</option>
                                     <option value="W">Premium Economy</option>
-                                    <option value="C">Business</option>
+                                    <option value="C">Business</option>\
                                     <option value="F">First</option>
                                 </select>
                                 
